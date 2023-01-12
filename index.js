@@ -32,7 +32,7 @@ async function run() {
         const database = client.db('Ranking');
         const results = database.collection('191');
         const errors = database.collection('error');
-        // const test = database.collection('test');
+        // const test = database.collection('test')
 
 
         app.get('/check', async (request, response) => {
