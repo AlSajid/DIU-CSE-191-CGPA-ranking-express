@@ -12,8 +12,8 @@ app.use(express.json())
 const uri = "mongodb+srv://AlSajid:Te6ID2cDdypEDQZS@ranking.hzaflbj.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri);
 
-// const range = [2346, 2347]
-const range = [2718, 2766]
+
+const range = []
 
 const semesterId =
     [
