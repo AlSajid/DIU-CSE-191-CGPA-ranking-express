@@ -127,8 +127,9 @@ async function run() {
 
         })
 
-        app.post('/ranking', async (request, response) => {
-            if (request.body.token === "sajid") {
+        app.get('/ranking', async (request, response) => {
+            const token = request.body.token;
+            if (token === "sajid") {
                 const query = {};
                 const options = {
                     sort: { cgpa: -1 },
@@ -137,8 +138,10 @@ async function run() {
                 const cursor = results.find(query, options);
                 const students = await cursor.toArray();
                 response.json(students)
+            } else {
+                response.status(401).json("unauthorized")
             }
-            response.status(401).json("unauthorized")
+
         })
         app.get('/serial', async (request, response) => {
             const query = {};
