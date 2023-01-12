@@ -127,7 +127,7 @@ async function run() {
 
         })
 
-        app.get('/ranking', async (request, response) => {
+        app.post('/ranking', async (request, response) => {
             const token = request.body.token;
             if (token === "sajid") {
                 const query = {};
