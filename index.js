@@ -128,19 +128,20 @@ async function run() {
         })
 
         app.post('/ranking', async (request, response) => {
-            const token = request.body.token;
-            if (token === "sajid") {
-                const query = {};
-                const options = {
-                    sort: { cgpa: -1 },
-                    projection: { studentId: 1, cgpa: 1, studentName: 1, campusName: 1 },
-                };
-                const cursor = results.find(query, options);
-                const students = await cursor.toArray();
-                response.json(students)
-            } else {
-                response.status(401).json("unauthorized")
-            }
+            // const token = request.body.token;
+            // if (token === "sajid") {
+            //     const query = {};
+            //     const options = {
+            //         sort: { cgpa: -1 },
+            //         projection: { studentId: 1, cgpa: 1, studentName: 1, campusName: 1 },
+            //     };
+            //     const cursor = results.find(query, options);
+            //     const students = await cursor.toArray();
+            //     response.json(students)
+            // } else {
+            //     response.status(401).json("unauthorized")
+            // }
+            response.json("done")
 
         })
         app.get('/serial', async (request, response) => {
